@@ -11,5 +11,5 @@ layout:false
 });
 });
 // startup this server
-app.listen(PORT);
+app.listen(process.env.PORT || PORT)
 console.log("Server on port %s", PORT);

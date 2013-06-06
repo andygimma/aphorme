@@ -1,6 +1,7 @@
 var PORT = 9000;
 var express = require("express");
 var app = express();
+var path = require('path');
 // special handling of the root folder
 app.use(express.static(path.join(__dirname, 'public')));
 
