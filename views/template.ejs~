@@ -109,7 +109,9 @@
 
 								<!-- Feature -->
 									<section>
-										
+										<header>
+											<h3>How can I help?</h3>
+										</header>
 										<p>Won't you join us, use the site, add terms, and help us change the way we look at language forever?</p>
 									</section>
 
@@ -131,8 +133,8 @@
 
 					<!-- Banner -->
 						<section id="banner" class="container">
-							<p>Use this space for <strong>profound thoughts</strong>.<br />
-							Or an enormous ad. Whatever.</p>
+							<p>If you talk to a man in a language he understands, that goes to his head. If you talk to him in his language, that goes to his heart.
+							 Nelson Mandela </p>
 						</section>
 
 				</div>
@@ -174,9 +176,8 @@
 							</div>
 							<div class="6u">
 								<section>
-									<p>Erat lorem ipsum veroeros consequat magna tempus lorem ipsum consequat Phaselamet 
-									mollis tortor congue. Sed quis mauris sit amet magna accumsan tristique. Curabitur 
-									leo nibh, rutrum eu malesuada.</p>
+									<p>We love this project. We want everyone to love this project. If you have any questions or concerns, please don't hesitate to contact us.</p>
+									<p>If, on the other hand, you already love Aphorme as much as we do, make sure you let everyone know about us!</p>
 									<div class="row">
 										<ul class="icons 6u">
 											<li class="icon icon-home">
