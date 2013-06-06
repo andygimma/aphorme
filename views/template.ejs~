@@ -89,9 +89,8 @@
 										</header>
 										<p>This is <strong>Aphorme</strong>, a free and open source tool that came to life during the Occupy Sandy relief effort. Working across many organizations and with volunteers from all over the country and world, we realized that one of our biggest barriers was language.</p>
 										
-										<p>This project is an open wiki, which allow for terms to be added and updated by anyone. These terms can be searched, cross-referenced, even tracked by organization and region. This way, we can share a common language. Change our language, and watch our language grow in real time.</p>
 										
-										<p>Won't you join us, use the site, add terms, and help us change the way we look at language forever?</p>
+										
 									</section>
 
 							</div>
@@ -99,13 +98,10 @@
 
 								<!-- Feature -->
 									<section>
-										<a href="http://regularjane.deviantart.com/art/Nutella-359114563" class="image image-full"><img src="images/pic02.jpg" alt="" /></a>
-										<header>
-											<h3>Nice! What is HTML5 UP?</h3>
+									<header>
+											<h3>What can we do with it?</h3>
 										</header>
-										<p><a href="http://html5up.net/">HTML5 UP</a> is a side project of <a href="http://n33.co">AJ’s</a> (ie. me).  
-										I started it as a way to both test my <a href="http://skeljs.org">skel.js</a> framework (formerly 
-										5grid) and sharpen up my design skills a bit.</p>
+										<p>This project is an open wiki, which allow for terms to be added and updated by anyone. These terms can be searched, cross-referenced, even tracked by organization and region. This way, we can share a common language, change our language, and watch our language grow in real time.</p>
 									</section>
 									
 							</div>
@@ -113,19 +109,17 @@
 
 								<!-- Feature -->
 									<section>
-										<a href="http://regularjane.deviantart.com/art/Solo-Spring-358679786" class="image image-full"><img src="images/pic03.jpg" alt="" /></a>
-										<header>
-											<h3>skel.js? WTF is that?</h3>
-										</header>
-										<p><a href="http://skeljs.org">skel.js</a> is a lightweight framework for building responsive 
-										sites and apps. All of my designs at <a href="http://html5up.net/">HTML5 UP</a> (including this 
-										one) are built on this framework.</p>
+										
+										<p>Won't you join us, use the site, add terms, and help us change the way we look at language forever?</p>
 									</section>
 
 							</div>
 						</div>
 						<ul class="actions">
 							<li><a href="#" class="button button-icon icon icon-file">Tell Me More</a></li>
+						</ul>
+						<ul class="actions">
+							<li><a href="#" class="button button-icon icon icon-file">Signup or Log In</a></li>
 						</ul>
 					</section>
 			
@@ -144,168 +138,6 @@
 				</div>
 			</div>
 
-		<!-- Main Wrapper -->
-			<div id="main-wrapper">
-
-				<!-- Main -->
-					<div id="main" class="container">
-						<div class="row">
-						
-							<!-- Content -->
-								<div id="content" class="8u">
-
-									<!-- Post -->
-										<article class="is-post">
-											<header>
-												<h2><a href="#">I don’t want to say <strong>it’s the aliens</strong> ...<br />
-												but it’s the aliens.</a></h2>
-											</header>
-											<a href="http://regularjane.deviantart.com/art/Write-354865228" class="image image-full"><img src="images/pic04.jpg" alt="" /></a>
-											<h3>I mean isn't it possible?</h3>
-											<p>Phasellus laoreet massa id justo mattis pharetra. Fusce suscipit 
-											ligula vel quam viverra sit amet mollis tortor congue. Sed quis mauris 
-											sit amet magna accumsan tristique. Curabitur leo nibh, rutrum eu malesuada 
-											in, tristique at erat lorem ipsum dolor sit amet lorem ipsum sed consequat 
-											magna tempus veroeros lorem sed tempus aliquam lorem ipsum veroeros 
-											consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id 
-											justo mattis pharetra. Fusce suscipit ligula vel quam viverra sit amet 
-											mollis tortor congue. Sed quis mauris sit amet magna accumsan tristique. 
-											Curabitur leo nibh, rutrum eu malesuada in, tristique at erat.</p>
-											<ul class="actions">
-												<li><a href="#" class="button button-icon icon icon-file">Continue Reading</a></li>
-											</ul>
-										</article>
-
-									<!-- Post -->
-										<article class="is-post">
-											<header>
-												<h2><a href="#">By the way, many thanks to <strong>regularjane</strong>
-												for these awesome demo photos</a></h2>
-											</header>
-											<a href="http://regularjane.deviantart.com/art/Old-Player-350896538" class="image image-full"><img src="images/pic05.jpg" alt="" /></a>
-											<h3>You should probably check out her work</h3>
-											<p>Phasellus laoreet massa id justo mattis pharetra. Fusce suscipit 
-											ligula vel quam viverra sit amet mollis tortor congue. Sed quis mauris 
-											sit amet magna accumsan tristique. Curabitur leo nibh, rutrum eu malesuada 
-											in, tristique at erat lorem ipsum dolor sit amet lorem ipsum sed consequat 
-											consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id 
-											in, tristique at erat lorem ipsum dolor sit amet lorem ipsum sed consequat 
-											magna tempus veroeros lorem sed tempus aliquam lorem ipsum veroeros 
-											consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id 
-											justo mattis pharetra. Fusce suscipit ligula vel quam viverra sit amet 
-											mollis tortor congue. Sed quis mauris sit amet magna accumsan tristique. 
-											Curabitur leo nibh, rutrum eu malesuada in, tristique at erat.</p>
-											<p>Erat lorem ipsum veroeros consequat magna tempus lorem ipsum consequat 
-											Phasellus laoreet massa id justo mattis pharetra. Fusce suscipit ligula 
-											vel quam viverra sit amet mollis tortor congue. Sed quis mauris sit amet 
-											magna accumsan tristique. Curabitur leo nibh, rutrum eu malesuada in, 
-											tristique at erat. Curabitur leo nibh, rutrum eu malesuada  in, tristique 
-											at erat lorem ipsum dolor sit amet lorem ipsum sed consequat magna 
-											tempus veroeros lorem sed tempus aliquam lorem ipsum veroeros consequat 
-											magna tempus</p>
-											<ul class="actions">
-												<li><a href="#" class="button button-icon icon icon-file">Continue Reading</a></li>
-											</ul>
-										</article>
-								
-								</div>
-								
-							<!-- Sidebar -->
-								<div id="sidebar" class="4u">
-								
-									<!-- Excerpts -->
-										<section>
-											<ul class="divided">
-												<li>
-
-													<!-- Excerpt -->
-														<article class="is-excerpt">
-															<header>
-																<span class="date">May 18, 2013</span>
-																<h3><a href="#">Ermergerd sterf herpernd</a></h3>
-															</header>
-															<p>Lorem ipsum dolor odio facilisis convallis. Etiam non nunc vel est 
-															suscipit convallis non id orci lorem ipsum sed magna consequat feugiat lorem dolore.</p>
-														</article>
-
-												</li>
-												<li>
-
-													<!-- Excerpt -->
-														<article class="is-excerpt">
-															<header>
-																<span class="date">May 15, 2013</span>
-																<h3><a href="#">Kerfer merks mer herper</a></h3>
-															</header>
-															<p>Lorem ipsum dolor odio facilisis convallis. Etiam non nunc vel est 
-															suscipit convallis non id orci lorem ipsum sed magna consequat feugiat lorem dolore.</p>
-														</article>
-
-												</li>
-												<li>
-
-													<!-- Excerpt -->
-														<article class="is-excerpt">
-															<header>
-																<span class="date">May 12, 2013</span>
-																<h3><a href="#">Blerg persts er fern</a></h3>
-															</header>
-															<p>Lorem ipsum dolor odio facilisis convallis. Etiam non nunc vel est 
-															suscipit convallis non id orci lorem ipsum sed magna consequat feugiat lorem dolore.</p>
-														</article>
-
-												</li>
-											</ul>
-										</section>
-								
-									<!-- Highlights -->
-										<section>
-											<ul class="divided">
-												<li>
-
-													<!-- Highlight -->
-														<article class="is-highlight">
-															<header>
-																<h3><a href="#">Something of note</a></h3>
-															</header>
-															<a href="http://regularjane.deviantart.com/art/In-Your-Hands-356733525" class="image image-left"><img src="images/pic06.jpg" alt="" /></a>
-															<p>Phasellus  sed laoreet massa id justo mattis pharetra. Fusce suscipit ligula vel quam 
-															viverra sit amet mollis tortor congue magna lorem ipsum dolor et quisque ut odio facilisis 
-															convallis. Etiam non nunc vel est suscipit convallis non id orci. Ut interdum tempus 
-															facilisis convallis. Etiam non nunc vel est suscipit convallis non id orci.</p>
-															<ul class="actions">
-																<li><a href="#" class="button button-icon icon icon-file">Learn More</a></li>
-															</ul>
-														</article>
-
-												</li>
-												<li>
-
-													<!-- Highlight -->
-														<article class="is-highlight">
-															<header>
-																<h3><a href="#">Something of less note</a></h3>
-															</header>
-															<a href="http://regularjane.deviantart.com/art/Pink-Rain-2009-134901803" class="image image-left"><img src="images/pic07.jpg" alt="" /></a>
-															<p>Phasellus  sed laoreet massa id justo mattis pharetra. Fusce suscipit ligula vel quam 
-															viverra sit amet mollis tortor congue magna lorem ipsum dolor et quisque ut odio facilisis 
-															convallis. Etiam non nunc vel est suscipit convallis non id orci. Ut interdum tempus 
-															facilisis convallis. Etiam non nunc vel est suscipit convallis non id orci.</p>
-															<ul class="actions">
-																<li><a href="#" class="button button-icon icon icon-file">Learn More</a></li>
-															</ul>
-														</article>
-
-												</li>
-											</ul>
-										</section>
-								
-								</div>
-
-						</div>
-					</div>
-
-			</div>
 
 		<!-- Footer Wrapper -->
 			<div id="footer-wrapper">
