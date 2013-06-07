@@ -42,10 +42,10 @@
 							<nav id="nav">
 								<ul>
 									<li><a class="icon icon-home" href="/"><span>Home</span></a></li>
-									<li><a href="" class="icon icon-bar-chart"><span>About</span></a></li>
-									<li><a class="icon icon-cog" href="left-sidebar.html"><span>Contact</span></a></li>
-									<li><a class="icon icon-retweet" href="right-sidebar.html"><span>Guide</span></a></li>
-									<li><a class="icon icon-sitemap" href="no-sidebar.html"><span>Sign In</span></a></li>
+									<li><a href="/about" class="icon icon-bar-chart"><span>About</span></a></li>
+									<li><a class="icon icon-cog" href="/contact"><span>Contact</span></a></li>
+									<li><a class="icon icon-retweet" href="/guide"><span>Guide</span></a></li>
+									<li><a class="icon icon-sitemap" href="/signin"><span>Sign In</span></a></li>
 								</ul>
 							</nav>
 							
@@ -61,71 +61,57 @@
 				<!-- Features -->
 					<section id="features" class="container">
 						<header>
-							<h2>Welcome to the first editable lexicon. <strong>Let's change the way we communicate</strong>!</h2>
+							<h2>Add a term</h2>
 						</header>
 						<a href="http://regularjane.deviantart.com/art/Old-Reads-363428235" class="image image-full"><img src="images/pic01.jpg" alt="" height="50"/></a>
 						<div class="row">
-							<div class="4u">
-
-								<!-- Feature -->
-									<section>
-									
-										<!--<a href="http://regularjane.deviantart.com/art/Old-Reads-363428235" class="image image-full"><img src="images/pic01.jpg" alt=""/></a>-->
-										<header>
-											<h3>Okay, so what is this?</h3>
-										</header>
-										<p>This is <strong>Aphorme</strong>, a free and open source tool that came to life during the Occupy Sandy relief effort. Working across many organizations and with volunteers from all over the country and world, we realized that one of our biggest barriers was language.</p>
+								<section>
+									<form method="post" action="#">
+										<div class="row">
+											<div class="6u">
+												<input name="term" placeholder="Term" type="text" class="text" />
+											</div>
+											<div class="6u">
+												<input name="origin" placeholder="Origin" type="text" class="text" />
+											</div>
+										</div>
 										
+										<div class="row">
+											<div class="12u">
+												<input name="related_terms" placeholder="Related Terms" type="text" class="text" />
+											</div>
+										</div>
 										
-										
-									</section>
-
-							</div>
-							<div class="4u">
-
-								<!-- Feature -->
-									<section>
-									<header>
-											<h3>What can we do with it?</h3>
-										</header>
-										<p>This project is an open wiki, which allow for terms to be added and updated by anyone. These terms can be searched, cross-referenced, even tracked by organization and region. This way, we can share a common language, change our language, and watch our language grow in real time.</p>
-									</section>
-									
-							</div>
-							<div class="4u">
-
-								<!-- Feature -->
-									<section>
-										<header>
-											<h3>How can I help?</h3>
-										</header>
-										<p>Won't you join us, use the site, add terms, and help us change the way we look at language forever?</p>
-									</section>
-
-							</div>
+										<div class="row">
+											<div class="12u">
+												<textarea name="bit" placeholder="Bit"></textarea>
+											</div>
+										</div>
+										<div class="row">
+											<div class="12u">
+												<textarea name="byte" placeholder="Byte"></textarea>
+											</div>
+										</div>
+										<div class="row">
+											<div class="12u">
+												<textarea name="batch" placeholder="Batch"></textarea>
+											</div>
+										</div>
+										<div class="row">
+											<div class="12u">
+												<a href="#" class="button button-icon icon icon-envelope">Add This Term To Aphorme</a>
+											</div>
+										</div>
+									</form>
+								</section>
+							
 						</div>
-						<ul class="actions">
-							<li><a href="#" class="button button-icon icon icon-file">Tell Me More</a></li>
-						</ul>
-						<ul class="actions">
-							<li><a href="#" class="button button-icon icon icon-file">Signup or Log In</a></li>
-						</ul>
+
 					</section>
 			
 			</div>
 		
-		<!-- Banner Wrapper -->
-			<div id="banner-wrapper">
-				<div class="inner">
-
-					<!-- Banner -->
-						<section id="banner" class="container">
-							<p>If you talk to a man in a language he understands, that goes to his head. If you talk to him in his language, that goes to his heart.</p>
-							 <p>Nelson Mandela </p>
-						</section>
-
-				</div>
-			</div>
+		
 
 
 		<!-- Footer Wrapper -->
