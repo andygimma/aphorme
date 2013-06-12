@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+<!--
+	Strongly Typed 1.0 by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Aphorme</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		  <meta content="minimum-scale=1.0, width=device-width, maximum-scale=1.0, user-scalable=no" name="viewport" />
+
+		<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Arvo:700" rel="stylesheet" type="text/css" />
+		<script src="js/jquery-1.9.1.min.js"></script>
+		<script src="js/jquery.dropotron-1.3.js"></script>
+		<script src="js/config.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-ui.min.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel-noscript.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+		</noscript>
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+	</head>
+	<body class="homepage">
+
+		<!-- Header Wrapper -->
+			<div id="header-wrapper">
+
+						
+				<!-- Header -->
+					<div id="header" class="container">
+
+						<!-- Logo -->
+						
+							<h1 id="logo"><a href="#">Aphorme</a></h1>
+<!-- 							<p>A responsive HTML5 site template. Manufactured by HTML5 UP.</p> -->
+						<!-- Nav -->
+							<nav id="nav">
+								<ul>
+									<li><a class="icon icon-home" href="/"><span>Home</span></a></li>
+									<li><a href="/about" class="icon icon-bar-chart"><span>About</span></a></li>
+									<li><a class="icon icon-cog" href="/contact"><span>Contact</span></a></li>
+									<li><a class="icon icon-retweet" href="/guide"><span>Guide</span></a></li>
+									<%if (signed_in) { %>
+									 <li>
+										<a href="" class="icon icon-bar-chart"><span>User</span></a>
+										<ul>
+											<li><a href="/add">Add</a></li>
+											<li><a href="/view">View Example</a></li>
+											<li><a href="#">Settings</a></li>
+											<li><a href="#">Logout</a></li>
+											
+										</ul>
+									</li>
+									<% } else { %>
+									 <li><a class="icon icon-retweet" href="/signin"><span>Sign in</span></a></li>
+									<% } %>
+								</ul>
+							</nav>
+							
+
+					</div>
+
+			</div>
+			
+		<!-- Features Wrapper -->
+			<div id="features-wrapper">
+			
+
+				<!-- Features -->
+					<section id="features" class="container">
+						<header>
+							<h2>Sign Up For Aphorme</h2>
+						</header>
+						<a href="http://regularjane.deviantart.com/art/Old-Reads-363428235" class="image image-full"><img src="images/pic01.jpg" alt="" height="50"/></a>
+						<div class="row">
+								<section>
+									<form method="post" action="/signup">
+										
+										<div class="row">
+											<div class="12u">
+												<input name="email" placeholder="Email" type="text" class="text" />
+											</div>
+										</div>
+										<div class="row">
+											<div class="12u">
+												<input name="password" placeholder="Password" type="text" class="text" />
+											</div>
+										</div>
+										<div class="row">
+											<div class="12u">
+												<input name="confirm_password" placeholder="Confirm Password" type="text" class="text" />
+											</div>
+										</div>
+										
+										
+										<div class="row">
+											<div class="12u">
+												<a href="#" onclick="document.forms[0].submit();return false;" class="button button-icon icon icon-envelope">Signup</a>
+											</div>
+										</div>
+									</form>
+								</section>
+							
+						</div>
+
+					</section>
+			
+			</div>
+		
+		
+
+
+		<!-- Footer Wrapper -->
+			<div id="footer-wrapper">
+
+				<!-- Footer -->
+					<div id="footer" class="container">
+						
+					</div>
+
+				<!-- Copyright -->
+					<div id="copyright" class="container">
+						<ul class="links">
+<!-- 							<li>&copy; Untitled. All rights reserved</li> -->
+							<li>Demo images: <a href="http://regularjane.deviantart.com/">regularjane</a></li>
+							<li>Design: <a href="http://html5up.net/">HTML5 UP</a></li>
+						</ul>
+					</div>
+
+			</div>
+
+	</body>
+</html>
