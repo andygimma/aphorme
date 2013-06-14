@@ -110,6 +110,15 @@ app.get("/about", function(req, res){
   });
 });
 
+app.get("/edit", function(req, res){
+  var signed_in = checkSignedIn(req);
+
+  res.render('edit.ejs', {
+    layout:false,
+    signed_in: signed_in
+  });
+});
+
 app.get("/contact", function(req, res){
   var signed_in = checkSignedIn(req);
   res.render('contact.ejs', {

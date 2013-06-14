@@ -83,126 +83,13 @@
 				<!-- Features -->
 					<section id="features" class="container">
 						<header>
-							<h2>View Term</h2>
+							<h2>Contact</h2>
 						</header>
 						<a href="http://regularjane.deviantart.com/art/Old-Reads-363428235" class="image image-full"><img src="images/pic01.jpg" alt="" height="50"/></a>
 						<div class="row">
-						
-						  <% terms.forEach( function( term ){ %>
-						  
-				<div class="row">
-							<div class="4u">
-
-								<!-- Feature -->
-									<section>
-									
-										<!--<a href="http://regularjane.deviantart.com/art/Old-Reads-363428235" class="image image-full"><img src="images/pic01.jpg" alt=""/></a>-->
-										<header>
-											<h3>Term</h3>
-										</header>
-										<p><%= term.term %></p>
-										
-										
-										
-									</section>
-
-							</div>
-							<div class="4u">
-
-								<!-- Feature -->
-									<section>
-									<header>
-											<h3>Origin</h3>
-										</header>
-										<p><%= term.origin %></p>
-									</section>
-									
-							</div>
-							<div class="4u">
-
-								<!-- Feature -->
-									<section>
-										<header>
-											<h3>Related Terms</h3>
-										</header>
-										<p><%= term.related_terms %></p>
-									</section>
-
-							</div>
+							<p>Our highest goal, is to make a great communications instrument. If you want to help, or if you have some comment or suggestion fill out the message form below.</p>
+							<p>We're so interesting in getting your feed back, that we've included that form on most pages. We hope to hear from you!</p>
 						</div>
-									<div class="row">
-							<div class="4u">
-
-								<!-- Feature -->
-									<section>
-									
-										<!--<a href="http://regularjane.deviantart.com/art/Old-Reads-363428235" class="image image-full"><img src="images/pic01.jpg" alt=""/></a>-->
-										<header>
-											<h3>Bit</h3>
-										</header>
-										<p><%= term.bit %></p>
-										
-										
-										
-									</section>
-
-							</div>
-							<div class="4u">
-
-								<!-- Feature -->
-									<section>
-									<header>
-											<h3>Byte</h3>
-										</header>
-										<p><%= term.byte %></p>
-									</section>
-									
-							</div>
-							<div class="4u">
-
-								<!-- Feature -->
-									<section>
-										<header>
-											<h3>Batch</h3>
-										</header>
-										<p><%= term.batch %></p>
-									</section>
-
-							</div>
-						</div>
-						     <ul class="actions">
-							<li><a href="/edit?term_id=<%= term._id %>" class="button button-icon icon icon-file">Tell Me More</a></li>
-						</ul>
-						  <% }); %>
-						  
-<!--							<h3><a href=""><u>A</u></a></h3>
-							<h3><a href=""><u>B</u></a></h3>
-							<h3><a href=""><u>C</u></a></h3>
-							<h3><a href=""><u>D</u></a></h3>
-							<h3><a href=""><u>E</u></a></h3>
-							<h3><a href=""><u>F</u></a></h3>
-							<h3><a href=""><u>G</u></a></h3>
-							<h3><a href=""><u>H</u></a></h3>
-							<h3><a href=""><u>I</u></a></h3>
-							<h3><a href=""><u>J</u></a></h3>
-							<h3><a href=""><u>K</u></a></h3>
-							<h3><a href=""><u>L</u></a></h3>
-							<h3><a href=""><u>M</u></a></h3>
-							<h3><a href=""><u>N</u></a></h3>
-							<h3><a href=""><u>O</u></a></h3>
-							<h3><a href=""><u>P</u></a></h3>
-							<h3><a href=""><u>Q</u></a></h3>
-							<h3><a href=""><u>R</u></a></h3>
-							<h3><a href=""><u>S</u></a></h3>
-							<h3><a href=""><u>T</u></a></h3>
-							<h3><a href=""><u>U</u></a></h3>
-							<h3><a href=""><u>V</u></a></h3>
-							<h3><a href=""><u>W</u></a></h3>
-							<h3><a href=""><u>X</u></a></h3>
-							<h3><a href=""><u>Y</u></a></h3>
-							<h3><a href=""><u>Z</u></a></h3>
-							
-						</div>-->
 
 					</section>
 			
