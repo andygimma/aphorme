@@ -146,6 +146,7 @@ app.post('/search', function(req, res){
 	} else {
 	  console.log("success");
 	  var search_id = q[0]._id;
+	  res.redirect("/term?term_id=" + search_id);
 	  
 	}
     });
