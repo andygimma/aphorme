@@ -24,6 +24,35 @@
 			<link rel="stylesheet" href="css/style-desktop.css" />
 		</noscript>
 		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+		<script>
+		function isValidEmailAddress(emailAddress) {
+		  var pattern = new RegExp(/^[+a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i);
+		  // alert( pattern.test(emailAddress) );
+		  return pattern.test(emailAddress);
+		};
+		function checkAndSubmit() {
+		  var submit_boolean = true;
+		  var values = $('#email').val();
+	          if (!isValidEmailAddress(values)) {
+		     $('#email_error').text("Not a valid email");
+		     submit_boolean = false;
+		  } 
+		   
+		  var password = $('#password').val();
+		  var confirm_password = $('#confirm_password').val();
+		  if (password != confirm_password) {
+		    $('#passwords_match_error').text("Passwords don't match");
+		    submit_boolean = false;
+		  }
+		  
+		  if (submit_boolean == true) {
+		    document.forms[0].submit();return false;
+		  }
+
+		
+		
+		}
+		</script>
 	</head>
 	<body class="homepage">
 
@@ -80,27 +109,29 @@
 						<div class="row">
 								<section>
 									<form method="post" action="/signup">
-										
+										<span id="email_error"></span>
+										<br>
+										<span id="passwords_match_error"></span>
 										<div class="row">
 											<div class="12u">
-												<input name="email" placeholder="Email" type="text" class="text" />
+												<input id="email" name="email" placeholder="Email" type="text" class="text" />
 											</div>
 										</div>
 										<div class="row">
 											<div class="12u">
-												<input name="password" placeholder="Password" type="text" class="text" />
+												<input id="password" name="password" placeholder="Password" type="text" class="text" />
 											</div>
 										</div>
 										<div class="row">
 											<div class="12u">
-												<input name="confirm_password" placeholder="Confirm Password" type="text" class="text" />
+												<input id="confirm_password" name="confirm_password" placeholder="Confirm Password" type="text" class="text" />
 											</div>
 										</div>
 										
 										
 										<div class="row">
 											<div class="12u">
-												<a href="#" onclick="document.forms[0].submit();return false;" class="button button-icon icon icon-envelope">Signup</a>
+												<a href="#" onclick="checkAndSubmit()" class="button button-icon icon icon-envelope">Signup</a>
 											</div>
 										</div>
 									</form>
@@ -135,4 +166,67 @@
 			</div>
 
 	</body>
+		<script>
+				console.log("script");
+			
+			function isValidEmailAddress(emailAddress) {
+			    var pattern = new RegExp(/^[+a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i);
+			    // alert( pattern.test(emailAddress) );
+			    return pattern.test(emailAddress);
+			};
+
+		 $('#email').keyup(function() {
+		     var values = $('#email').val();
+
+		    if (!isValidEmailAddress(values)) {
+		      $('#email_error').text("Not a valid email");
+
+		    } else {
+		      console.log("VALID");
+		      $('#email_error').text("Valid email");
+		    }
+		    $('#email').blur(function() {
+		    console.log("blur");
+		    var values = $('#email').val();
+
+		    if (!isValidEmailAddress(values)) {
+		      $('#email_error').text("Not a valid email");
+
+		    } else {
+		      console.log("VALID");
+		      $('#email_error').text("Valid email");
+		    }
+		    });
+		    console.log(values);
+		    
+		  });
+		  console.log('Handler for .keyup() called.');
+		  </script>
+		  
+		  <script>
+		
+
+		 $('#confirm_password').keyup(function() {
+		     var password = $('#password').val();
+		     var confirm_password = $('#confirm_password').val();
+		     if (password != confirm_password) {
+			$('#passwords_match_error').text("Passwords don't match");
+		     } else {
+			$('#passwords_match_error').text("Passwords match");
+		     }
+
+		    
+		  });
+		  $('#confirm_password').blur(function() {
+		     var password = $('#password').val();
+		     var confirm_password = $('#confirm_password').val();
+		     if (password != confirm_password) {
+			$('#passwords_match_error').text("Passwords don't match");
+		     } else {
+			$('#passwords_match_error').text("Passwords match");
+		     }
+
+		  });
+		  console.log('Handler for .keyup() called.');
+		  </script>
 </html>

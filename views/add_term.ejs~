@@ -35,8 +35,18 @@
 					<div id="header" class="container">
 
 						<!-- Logo -->
-						
-							<h1 id="logo"><a href="#">Aphorme</a></h1>
+						<form method="post" action="#">
+										<div class="row">
+											<div class="9u">
+												<input name="search Term" placeholder="" type="text" class="text" />
+											</div>
+											<div class="3u">
+												<a href="#" class="button button-icon icon icon-envelope">Search</a>
+											</div>
+										</div>
+										
+						</form>
+							<br><h1 id="logo"><a href="#">Aphorme</a></h1>
 <!-- 							<p>A responsive HTML5 site template. Manufactured by HTML5 UP.</p> -->
 						<!-- Nav -->
 							<nav id="nav">
@@ -52,7 +62,7 @@
 											<li><a href="/add">Add</a></li>
 											<li><a href="/view">View Example</a></li>
 											<li><a href="#">Settings</a></li>
-											<li><a href="#">Logout</a></li>
+											<li><a href="/logout">Logout</a></li>
 											
 										</ul>
 									</li>

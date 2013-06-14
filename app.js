@@ -3,35 +3,48 @@ var express = require("express");
 var mongoose = require("mongoose");
 var crypto = require('crypto');
 
-var db = mongoose.connect('mongodb://localhost/SomeDb');
+var mongoURI = process.env.MONGOHQ_URL || 'mongodb://localhost/SomeDb';
+var db = mongoose.connect(mongoURI);
 // const sessions = require("client-sessions");
 
 var Schema = mongoose.Schema;
-var Users = new Schema({
+var UserEntity = new Schema({
   email : String,
   password_hash : String,
+  city: String,
+  state: String,
+  country: String,
+  origin: String
 });
 
-var User = mongoose.model('User', Users);
+var TermEntity = new Schema({
+  bit: String,
+  byte: String,
+  batch: String,
+  origin: String,
+  user_id: String
+});
 
-// User.find({}, function (err, docs) {
-//   // docs.forEach
-//   console.log(docs);
-// });
-
+var User= mongoose.model('UserCollection', UserEntity);
+var Term = mongoose.model('TermCollection', TermEntity);
 
 var Posts = new Schema({
   name : String,
 });
 mongoose.model('Post', Posts);
 
-function createNewUser(email, password_hash){
-    var User = mongoose.model('User');
+function createNewUser(email, password_hash, req, res){
     var user = new User({email:email, password_hash:password_hash});
     user.save(function(err){
       console.log("saving");
         if(!err){
             console.log('User saved.');
+	    console.log("id = " + user._id);
+	    req.session.session_id = user._id;
+	    req.session.email = user.email;
+	    req.session.save();
+	    res.redirect("/");
+
         }
     });
 }
@@ -101,9 +114,8 @@ app.post('/signup', function(request, response){
     shasum.update(request.body.password + hash_salt);
     var d = shasum.digest('hex');
     console.log(d)
-    createNewUser(request.body.email, d);
+    createNewUser(request.body.email, d, request, response);
 
-    response.redirect("/");
 });
 
 app.get("/guide", function(req, res){
@@ -130,20 +142,30 @@ app.post('/signin', function(req, res){
     var d = shasum.digest('hex');
     User.find({email: req.body.email, password_hash: d}, function(err,q){
         req.session.session_id = q[0]._id;
+	req.session.email = q[0].email;
 	req.session.save();
 	console.log(req.session.session_id);
         console.log(q[0]._id);
+	res.redirect("/");
     });
     
-    res.redirect("/");
+
 });
 
 app.get("/add", function(req, res){
   var signed_in = checkSignedIn(req);
   if (signed_in == false) {
-    res.redirect('/signup');
+    res.redirect('/signin');
   }
   res.render('add_term.ejs', {
+    layout:false,
+    signed_in: signed_in
+
+  });
+});
+app.get("/view", function(req, res){
+  var signed_in = checkSignedIn(req);
+  res.render('view_example.ejs', {
     layout:false,
     signed_in: signed_in
 
@@ -152,11 +174,25 @@ app.get("/add", function(req, res){
 app.get("/logout", function(req, res){
   var signed_in = checkSignedIn(req);
   if (signed_in == false) {
-    res.redirect('/signup');
+    res.redirect('/signin');
   } else {
     req.session.session_id = "None";
-    res.redirect('/signup');
+    res.redirect('/signin');
   }
+
+});
+
+app.get("/settings", function(req, res){
+  var signed_in = checkSignedIn(req);
+  if (signed_in == true) {
+    res.redirect('/signin');
+  }
+  res.render('user_settings.ejs', {
+    layout:false,
+  signed_in: signed_in
+
+});
+  
 
 });
 // startup this server
