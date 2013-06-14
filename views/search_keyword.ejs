@@ -108,13 +108,14 @@
 
 				<!-- Features -->
 					<section id="features" class="container">
-						<form method="post" action="#">
+						<form method="post" action="/search">
 										<div class="row">
 											<div class="10u">
-												<input name="search Term" placeholder="" type="text" class="text" />
+												<input name="search_term" placeholder="" type="text" class="text" />
 											</div>
 											<div class="2u">
-												<a href="#" class="button button-icon icon icon-envelope">Search</a>
+												<a href="#" onclick="		    document.forms[0].submit();return false;"
+												class="button button-icon icon icon-envelope">Search</a>
 											</div>
 										</div>
 										

@@ -53,7 +53,7 @@ function createNewUser(email, password_hash, req, res){
     });
 }
 
-function createNewTerm(term, bit, byte, batch, origin, user_id, related_terms, res) {
+function createNewTerm(term, bit, byte, batch, origin, related_terms, user_id, res) {
     var term = new Term({term: term, bit:bit, byte:byte, batch: batch, origin:origin, related_terms: related_terms, user_id: user_id});
     term.save(function(err){
       console.log("saving");
@@ -135,6 +135,23 @@ app.post('/signup', function(request, response){
 
 });
 
+app.post('/search', function(req, res){
+//     console.log(request.body.password);
+    search_term = req.body.search_term;
+    Term.find({term: search_term}, function(err,q){
+        console.log(q[0]);
+        if (typeof q[0] === 'undefined') {
+
+	  res.redirect("/search");
+	} else {
+	  console.log("success");
+	  var search_id = q[0]._id;
+	  
+	}
+    });
+
+});
+
 
 
 app.get("/guide", function(req, res){
@@ -153,7 +170,7 @@ app.get("/alphabetical", function(req, res){
     res.render('search_alphabetically.ejs', {
     layout:false,
     signed_in: signed_in,
-    terms: terms
+    terms: q
   });
   });
 
@@ -187,7 +204,7 @@ app.post('/signin', function(req, res){
 
 	  res.redirect("/signin");
 	} else {
-
+  
 	  req.session.session_id = q[0]._id;
 	  req.session.email = q[0].email;
 	  req.session.save();
@@ -232,6 +249,15 @@ app.get("/view", function(req, res){
 
   });
 });
+
+app.get("/error", function(req, res){
+  var signed_in = checkSignedIn(req);
+  res.render('error.ejs', {
+    layout:false,
+    signed_in: signed_in
+
+  });
+});
 app.get("/logout", function(req, res){
   var signed_in = checkSignedIn(req);
   if (signed_in == false) {
@@ -242,7 +268,18 @@ app.get("/logout", function(req, res){
   }
 
 });
+app.get("/term", function(req, res){
+  var signed_in = checkSignedIn(req);
+  console.log("term_id = " + req.query.term_id);
+  var terms = Term.find({_id: req.query.term_id}, function(err,q){
+    var signed_in = checkSignedIn(req);
+    res.render('view_term.ejs', {
+    layout:false,
+    signed_in: signed_in,
+  });
+  });
 
+});
 app.get("/settings", function(req, res){
   var signed_in = checkSignedIn(req);
   if (signed_in == true) {
@@ -253,6 +290,7 @@ app.get("/settings", function(req, res){
   signed_in: signed_in
 
 });
+  
   
 
 });

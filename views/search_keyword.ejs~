@@ -71,6 +71,15 @@
 									<li><a href="/about" class="icon icon-bar-chart"><span>About</span></a></li>
 									<li><a class="icon icon-cog" href="/contact"><span>Contact</span></a></li>
 									<li><a class="icon icon-retweet" href="/guide"><span>Guide</span></a></li>
+									<li>
+										<a href="" class="icon icon-bar-chart"><span>Search</span></a>
+										<ul>
+											<li><a href="/search">Keyword Search</a></li>
+											<li><a href="/alphabetical">Alphabetical Search</a></li>
+										
+											
+										</ul>
+									</li>
 									<%if (signed_in) { %>
 									 <li>
 										<a href="" class="icon icon-bar-chart"><span>User</span></a>
@@ -99,13 +108,14 @@
 
 				<!-- Features -->
 					<section id="features" class="container">
-						<form method="post" action="#">
+						<form method="post" action="/search">
 										<div class="row">
 											<div class="10u">
 												<input name="search Term" placeholder="" type="text" class="text" />
 											</div>
 											<div class="2u">
-												<a href="#" class="button button-icon icon icon-envelope">Search</a>
+												<a href="#" onclick="		    document.forms[0].submit();return false;"
+												class="button button-icon icon icon-envelope">Search</a>
 											</div>
 										</div>
 										
