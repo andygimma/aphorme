@@ -18,10 +18,12 @@ var UserEntity = new Schema({
 });
 
 var TermEntity = new Schema({
+  term: String,
   bit: String,
   byte: String,
   batch: String,
   origin: String,
+  related_terms: String,
   user_id: String
 });
 
@@ -45,10 +47,25 @@ function createNewUser(email, password_hash, req, res){
 	    req.session.save();
 	    res.redirect("/");
 
-        }
+        } else {
+	    res.redirect("/error");
+	}
     });
 }
 
+function createNewTerm(term, bit, byte, batch, origin, user_id, related_terms, res) {
+    var term = new Term({term: term, bit:bit, byte:byte, batch: batch, origin:origin, related_terms: related_terms, user_id: user_id});
+    term.save(function(err){
+      console.log("saving");
+        if(!err){
+            console.log('Term saved.');
+	    res.redirect("/alphabetical");
+
+        } else {
+	  res.redirect("/error");
+	}
+    });
+}
 function checkSignedIn(req) {
  console.log(req.session.session_id);
  if(typeof req.session.session_id === 'undefined' || req.session.session_id == 'None'){
@@ -114,13 +131,37 @@ app.post('/signup', function(request, response){
     shasum.update(request.body.password + hash_salt);
     var d = shasum.digest('hex');
     console.log(d)
-    createNewUser(request.body.email, d, request);
+    createNewUser(request.body.email, d, request, response);
 
 });
+
+
 
 app.get("/guide", function(req, res){
   var signed_in = checkSignedIn(req);
   res.render('guide.ejs', {
+    layout:false,
+    signed_in: signed_in
+  });
+});
+
+app.get("/alphabetical", function(req, res){
+  console.log("/a");
+  var terms = Term.find({}, function(err,q){
+    var signed_in = checkSignedIn(req);
+    console.log(terms);
+    res.render('search_alphabetically.ejs', {
+    layout:false,
+    signed_in: signed_in,
+    terms: terms
+  });
+  });
+
+});
+
+app.get("/search", function(req, res){
+  var signed_in = checkSignedIn(req);
+  res.render('search_keyword.ejs', {
     layout:false,
     signed_in: signed_in
   });
@@ -141,14 +182,34 @@ app.post('/signin', function(req, res){
     shasum.update(req.body.password + hash_salt);
     var d = shasum.digest('hex');
     User.find({email: req.body.email, password_hash: d}, function(err,q){
-        req.session.session_id = q[0]._id;
-	req.session.email = q[0].email;
-	req.session.save();
-	console.log(req.session.session_id);
-        console.log(q[0]._id);
-	res.redirect("/");
+        console.log(q[0]);
+        if (typeof q[0] === 'undefined') {
+
+	  res.redirect("/signin");
+	} else {
+
+	  req.session.session_id = q[0]._id;
+	  req.session.email = q[0].email;
+	  req.session.save();
+	  console.log(req.session.session_id);
+	  console.log(q[0]._id);
+	  res.redirect("/");
+	}
     });
+});
+
+app.post('/add', function(req, res){
+//     console.log(request.body.password);
+    bit = req.body.bit;
+    byte = req.body.byte;
+    batch = req.body.batch;
+    origin = req.body.origin;
+    term = req.body.term;
+    related_terms = req.body.related_terms;
+    user_id = req.session.session_id;
     
+    createNewTerm(term, bit, byte, batch, origin, related_terms, user_id, res);
+
 
 });
 

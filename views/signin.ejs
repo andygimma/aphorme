@@ -71,6 +71,15 @@
 									<li><a href="/about" class="icon icon-bar-chart"><span>About</span></a></li>
 									<li><a class="icon icon-cog" href="/contact"><span>Contact</span></a></li>
 									<li><a class="icon icon-retweet" href="/guide"><span>Guide</span></a></li>
+									<li>
+										<a href="" class="icon icon-bar-chart"><span>Search</span></a>
+										<ul>
+											<li><a href="/search">Keyword Search</a></li>
+											<li><a href="/alphabetical">Alphabetical Search</a></li>
+										
+											
+										</ul>
+									</li>
 									<%if (signed_in) { %>
 									 <li>
 										<a href="" class="icon icon-bar-chart"><span>User</span></a>
@@ -100,7 +109,7 @@
 				<!-- Features -->
 					<section id="features" class="container">
 						<header>
-							<h2>Sign Up For Aphorme</h2>
+							<h2>Sign In To Aphorme</h2>
 						</header>
 						<a href="http://regularjane.deviantart.com/art/Old-Reads-363428235" class="image image-full"><img src="images/pic01.jpg" alt="" height="50"/></a>
 						<div class="row">
@@ -124,7 +133,13 @@
 										
 										<div class="row">
 											<div class="12u">
-												<a href="#" onclick="checkAndSubmit()" class="button button-icon icon icon-envelope">Signup</a>
+												<a href="#" onclick="checkAndSubmit()" class="button button-icon icon icon-envelope">Signin</a>
+											</div>
+
+										</div>
+										<div class="row">
+											<div class="12u">
+												<a href="/signup"  class="button button-icon icon icon-envelope">Signup</a>
 											</div>
 
 										</div>

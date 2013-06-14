@@ -79,7 +79,7 @@
 						<a href="http://regularjane.deviantart.com/art/Old-Reads-363428235" class="image image-full"><img src="images/pic01.jpg" alt="" height="50"/></a>
 						<div class="row">
 								<section>
-									<form method="post" action="/signup">
+									<form method="post" action="/settings">
 										
 										<div class="row">
 											<div class="12u">
