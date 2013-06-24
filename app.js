@@ -154,8 +154,12 @@ app.post('/search', function(req, res){
 	  res.redirect("/search");
 	} else {
 	  console.log("success");
-	  var search_id = q[0]._id;
-	  res.redirect("/term?term_id=" + search_id);
+	    var signed_in = checkSignedIn(req);
+	    res.render('search_alphabetically.ejs', {
+	      layout:false,
+	      signed_in: signed_in,
+	      terms: q
+	    });
 	  
 	}
     });
