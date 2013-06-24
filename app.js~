@@ -29,11 +29,38 @@ var TermEntity = new Schema({
 
 var User= mongoose.model('UserCollection', UserEntity);
 var Term = mongoose.model('TermCollection', TermEntity);
+var VersionTerm = mongoose.model('VersionTermCollection', TermEntity);
 
 var Posts = new Schema({
   name : String,
 });
 mongoose.model('Post', Posts);
+
+function deleteTerm(term_id) {
+ Term.remove({ _id: term_id }, function(err) {
+    if (!err) {
+            console.log("removed");
+    }
+    else {
+            console.log("error");
+    }
+  }); 
+}
+
+// function versionTerm
+function createNewVersionTerm(term, bit, byte, batch, origin, related_terms, user_id, res) {
+    var term = new VersionTerm({term: term, bit:bit, byte:byte, batch: batch, origin:origin, related_terms: related_terms, user_id: user_id});
+    term.save(function(err){
+      console.log("saving");
+        if(!err){
+            console.log('Term saved.');
+	    res.redirect("/alphabetical");
+
+        } else {
+	  res.redirect("/error");
+	}
+    });
+}
 
 function createNewUser(email, password_hash, req, res){
     var user = new User({email:email, password_hash:password_hash});
@@ -76,6 +103,10 @@ function checkSignedIn(req) {
  console.log("true");
  return true;
 }
+
+function quickRedirect(res, url) {
+  res.redirect(url); 
+}
   
 var app = express();
 var path = require('path');
@@ -112,11 +143,20 @@ app.get("/about", function(req, res){
 
 app.get("/edit", function(req, res){
   var signed_in = checkSignedIn(req);
-
-  res.render('edit.ejs', {
-    layout:false,
-    signed_in: signed_in
-  });
+  if (signed_in == true) {
+    // get term_id, run a search, send an object
+    console.log("term_id = " + req.query.term_id);
+    var terms = Term.find({_id: req.query.term_id}, function(err,q){
+      var signed_in = checkSignedIn(req);
+      res.render('edit.ejs', {
+      layout:false,
+      signed_in: signed_in,
+      terms: q
+    });
+    });
+  } else {
+    res.redirect('/signin');
+  }
 });
 
 app.get("/contact", function(req, res){
@@ -155,7 +195,7 @@ app.post('/search', function(req, res){
 	} else {
 	  console.log("success");
 	    var signed_in = checkSignedIn(req);
-	    res.render('search_alphabetically.ejs', {
+	    res.render('search_list.ejs', {
 	      layout:false,
 	      signed_in: signed_in,
 	      terms: q
@@ -231,16 +271,53 @@ app.post('/signin', function(req, res){
 
 app.post('/add', function(req, res){
 //     console.log(request.body.password);
-    bit = req.body.bit;
-    byte = req.body.byte;
-    batch = req.body.batch;
-    origin = req.body.origin;
-    term = req.body.term;
-    related_terms = req.body.related_terms;
-    user_id = req.session.session_id;
-    
-    createNewTerm(term, bit, byte, batch, origin, related_terms, user_id, res);
+    var signed_in = checkSignedIn(req);
+    if (signed_in == true) {
+      
+      bit = req.body.bit;
+      byte = req.body.byte;
+      batch = req.body.batch;
+      origin = req.body.origin;
+      term = req.body.term;
+      related_terms = req.body.related_terms;
+      user_id = req.session.session_id;
+      
+      createNewTerm(term, bit, byte, batch, origin, related_terms, user_id, res);
+    } else {
+      res.redirect("/signin");
+    }
+});
 
+
+app.post('/edit', function(req, res){
+//     console.log(request.body.password);
+    var signed_in = checkSignedIn(req);
+    if (signed_in == true) {
+      bit = req.body.bit;
+      byte = req.body.byte;
+      batch = req.body.batch;
+      origin = req.body.origin;
+      term = req.body.term;
+      related_terms = req.body.related_terms;
+      term_id = req.body.term_id
+      user_id = req.session.session_id;
+      delete req.body.term_id;
+      console.log(term_id);
+      console.log("before update");
+
+      Term.update({_id: req.body.term_id}, {$set: req.body}, {upsert: true}, function() {
+	var url = "/term?term_id=" + term_id;
+	console.log("in update");
+	console.log(url)
+	res.redirect(url); 
+
+
+      });
+    
+    } else {
+      res.redirect("/signin"); 
+    }
+    
 
 });
 

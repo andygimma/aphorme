@@ -83,12 +83,55 @@
 				<!-- Features -->
 					<section id="features" class="container">
 						<header>
-							<h2>Contact</h2>
+							<h2>Edit</h2>
+
+
 						</header>
 						<a href="http://regularjane.deviantart.com/art/Old-Reads-363428235" class="image image-full"><img src="images/pic01.jpg" alt="" height="50"/></a>
 						<div class="row">
-							<p>Our highest goal, is to make a great communications instrument. If you want to help, or if you have some comment or suggestion fill out the message form below.</p>
-							<p>We're so interesting in getting your feed back, that we've included that form on most pages. We hope to hear from you!</p>
+							<% terms.forEach( function( term ){ %>
+
+							<section>
+								<form method="post" action="#">
+									<div class="row">
+										<div class="6u">
+											<input name="term" placeholder="Term" type="text" class="text" value="<%= term.term %>" />
+										</div>
+										<div class="6u">
+											<input name="origin" placeholder="Origin" type="text" class="text" value="<%= term.origin %>"/>
+										</div>
+									</div>
+									
+									<div class="row">
+										<div class="12u">
+											<input name="related_terms" placeholder="Related Terms" type="text" class="text" value="<%= term.related_terms %>" />
+										</div>
+									</div>
+									
+									<div class="row">
+										<div class="12u">
+											<textarea name="bit" placeholder="Bit"> <%= term.bit %></textarea>
+										</div>
+									</div>
+									<div class="row">
+										<div class="12u">
+											<textarea name="byte" placeholder="Byte"><%= term.byte %></textarea>
+										</div>
+									</div>
+									<div class="row">
+										<div class="12u">
+											<textarea name="batch" placeholder="Batch"><%= term.batch %></textarea>
+										</div>
+									</div>
+									<div class="row">
+										<div class="12u">
+											<a href="#" onclick="document.forms[0].submit();return false;" class="button button-icon icon icon-envelope">Submit Edit</a>
+										</div>
+									</div>
+								</form>
+							</section>
+							<% }); %>
+
 						</div>
 
 					</section>
