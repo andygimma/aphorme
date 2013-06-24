@@ -128,6 +128,8 @@
 											<a href="#" onclick="document.forms[0].submit();return false;" class="button button-icon icon icon-envelope">Submit Edit</a>
 										</div>
 									</div>
+									<input type="hidden" name="term_id" value="<%= term._id %>">
+
 								</form>
 							</section>
 							<% }); %>
