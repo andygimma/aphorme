@@ -237,7 +237,7 @@ app.post('/signin', function(req, res){
     var shasum = crypto.createHash('sha1');
     shasum.update(req.body.password + hash_salt);
     var d = shasum.digest('hex');
-    User.find({email: req.body.email, password_hash: d}, function(err,q){
+    User.find({email: new RegExp('^'+req.body.email+'$', "i"), password_hash: d}, function(err,q){
         console.log(q[0]);
         if (typeof q[0] === 'undefined') {
 
