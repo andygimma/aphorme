@@ -155,7 +155,7 @@ app.post('/search', function(req, res){
 	} else {
 	  console.log("success");
 	    var signed_in = checkSignedIn(req);
-	    res.render('search_alphabetically.ejs', {
+	    res.render('search_list.ejs', {
 	      layout:false,
 	      signed_in: signed_in,
 	      terms: q
