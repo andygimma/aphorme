@@ -147,7 +147,7 @@ app.post('/signup', function(request, response){
 app.post('/search', function(req, res){
 //     console.log(request.body.password);
     search_term = req.body.search_term;
-    Term.find({term: search_term}, function(err,q){
+    Term.find({term: new RegExp(search_term, "i")}, function(err,q){
         console.log(q[0]);
         if (typeof q[0] === 'undefined') {
 
